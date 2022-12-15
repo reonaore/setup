@@ -1,12 +1,12 @@
 #!/bin/bash
 
 EMAIL="reona.ookikunaru@gmail.com"
-DOWNLOAD_DIR="~/Downloads"
+DOWNLOAD_DIR="$HOME/Downloads"
 BREW_PATH="/opt/homebrew/bin"
 
 # install homw brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-export PATH="$PATH:/opt/homebew/bin"
+export PATH="$PATH:$BREW_PATH"
 
 # install
 brew install \
