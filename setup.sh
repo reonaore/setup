@@ -36,7 +36,7 @@ git clone git://github.com/zsh-users/zaw.git ~/.zsh/zaw
 cp ./alias.zsh ~/.zsh
 cp ./completion.zsh ~/.zsh
 cp ./git_prompt.zsh ~/.zsh
-cp ./profile.zsh ~/.zshrc
+cp ./.zshrc ~/.zshrc
 
 # install iterm
 wget -P $DOWNLOAD_DIR -O iterm.zip https://iterm2.com/downloads/stable/latest
