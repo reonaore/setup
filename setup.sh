@@ -1,6 +1,10 @@
 #!/bin/bash
 
-EMAIL="reona.ookikunaru@gmail.com"
+if [ -z $EMAIL ]; then
+	echo "please set EMAIL" >&2
+	exit 1
+fi
+
 DOWNLOAD_DIR="$HOME/Downloads"
 BREW_PATH="/opt/homebrew/bin"
 
@@ -24,19 +28,13 @@ if [ ! -e ~/.zsh ]; then
 	mkdir -p ~/.zsh
 fi
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.zsh/git-completion.bash
-chmod a+x ~/.zsh/git-completion.bash
-
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.zsh/git-prompt.sh
-chmod a+x ~/.zsh/git-prompt.sh
-
-git clone git://github.com/zsh-users/zaw.git ~/.zsh/zaw
-
-cp ./alias.zsh ~/.zsh
-cp ./completion.zsh ~/.zsh
-cp ./git_prompt.zsh ~/.zsh
+cp -r ./plugins ~/.zsh
+cp ./zplug.zsh ~/.zsh
+cp ./profile.zsh ~/.zsh
 cp ./.zshrc ~/.zshrc
+
+# install zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 # install iterm
 wget -P $DOWNLOAD_DIR -O iterm.zip https://iterm2.com/downloads/stable/latest
