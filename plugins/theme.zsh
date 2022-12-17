@@ -1,5 +1,4 @@
 # git ps1
-source ~/.zsh/git-prompt.sh
 fpath=(~/.zsh $fpath)
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true

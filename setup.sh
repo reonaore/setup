@@ -1,12 +1,16 @@
 #!/bin/bash
 
-EMAIL="reona.ookikunaru@gmail.com"
-DOWNLOAD_DIR="~/Downloads"
+if [ -z $EMAIL ]; then
+	echo "please set EMAIL" >&2
+	exit 1
+fi
+
+DOWNLOAD_DIR="$HOME/Downloads"
 BREW_PATH="/opt/homebrew/bin"
 
 # install homw brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-export PATH="$PATH:/opt/homebew/bin"
+export PATH="$PATH:$BREW_PATH"
 
 # install
 brew install \
@@ -24,19 +28,13 @@ if [ ! -e ~/.zsh ]; then
 	mkdir -p ~/.zsh
 fi
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.zsh/git-completion.bash
-chmod a+x ~/.zsh/git-completion.bash
+cp -r ./plugins ~/.zsh
+cp ./zplug.zsh ~/.zsh
+cp ./profile.zsh ~/.zsh
+cp ./.zshrc ~/.zshrc
 
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.zsh/git-prompt.sh
-chmod a+x ~/.zsh/git-prompt.sh
-
-git clone git://github.com/zsh-users/zaw.git ~/.zsh/zaw
-
-cp ./alias.zsh ~/.zsh
-cp ./completion.zsh ~/.zsh
-cp ./git_prompt.zsh ~/.zsh
-cp ./profile.zsh ~/.zshrc
+# install zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 # install iterm
 wget -P $DOWNLOAD_DIR -O iterm.zip https://iterm2.com/downloads/stable/latest
