@@ -12,6 +12,7 @@ zplug "willghatch/zsh-cdr"
 zplug "git/git", from:github, use:"contrib/completion/git-prompt.sh"
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 
 if ! zplug check --verbose; then

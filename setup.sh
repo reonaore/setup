@@ -19,7 +19,8 @@ brew install \
 	curl \
 	shellcheck \
 	coreutils \
-	git
+	git \
+	tmux
 
 ssh-keygen -t ed25519 -C $EMAIL
 
