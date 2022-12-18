@@ -33,6 +33,7 @@ cp -r ./plugins ~/.zsh
 cp ./zplug.zsh ~/.zsh
 cp ./profile.zsh ~/.zsh
 cp ./.zshrc ~/.zshrc
+cp ./.tmux.conf ~/.tmux.conf
 
 # install zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
