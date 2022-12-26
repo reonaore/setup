@@ -15,12 +15,8 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo
-        zplug install
-    fi
+if ! zplug check; then
+    zplug install
 fi
 
-zplug load --verbose
+zplug load
