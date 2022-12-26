@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. getOS.sh
+. get_os.sh
 . ./install_scripts.sh
 
 if [ -z $EMAIL ]; then
