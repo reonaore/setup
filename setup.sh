@@ -8,7 +8,7 @@ if [ -z $EMAIL ]; then
 	exit 1
 fi
 
-OS=$(getOS)
+OS=$(get_os)
 
 if [ $? -ne 0 ]; then
 	exit 1
