@@ -1,5 +1,5 @@
-export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/opt/homebrew/bin"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 source ~/.zsh/zplug.zsh
 
