@@ -23,7 +23,7 @@ if [ $OS = "Darwin" ]; then
 	export PATH="$PATH:$BREW_PATH"
 fi
 
-COMMAND_LIST=(vim wget curl shellcheck coreutils git tmux)
+COMMAND_LIST=(vim nvim wget curl shellcheck coreutils git tmux)
 
 # install commands
 if [ $OS = "Darwin" ]; then

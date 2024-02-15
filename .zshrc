@@ -9,4 +9,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     ssh-add ~/.ssh/id_ed25519
 fi
 
+export LC_ALL=en_US.UTF-8
+
 source ~/.zsh/profile.zsh
+tmux new-session -A -s main
