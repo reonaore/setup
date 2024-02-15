@@ -5,3 +5,5 @@ else
     eval $(dircolors ~/.colorrc)
     alias ls='ls --color=auto'
 fi
+
+alias vim='nvim'
